@@ -138,6 +138,8 @@ void LayeredCostmap::updateMap(double robot_x, double robot_y, double robot_yaw)
     combined_costmap_.updateOrigin(new_origin_x, new_origin_y);
   }
 
+  std::cout << "robot_x: " << robot_x << ", robot_y: " << robot_y << std::endl;
+
   if (isOutofBounds(robot_x, robot_y)) {
     RCLCPP_WARN(
       rclcpp::get_logger("nav2_costmap_2d"),
